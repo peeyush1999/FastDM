@@ -109,7 +109,9 @@ if(path.exists(f_path)):
     num_threads = int(file.read(2))
     print("Number Chunk in File Were",num_threads)
 else:
-    num_threads = int(input("No of Parallel Threads (1-25)"))
+    num_threads = int(input("No of Parallel Threads (1-10)"))
+    if(num_threads > 10):
+        num_threads=10
     
 chunk = math.ceil(int(length)/num_threads)
 num_chunk = num_threads
